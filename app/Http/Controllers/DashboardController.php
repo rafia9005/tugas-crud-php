@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function index()
     {
         $title = "dashboard page";
-        $users = User::all();
+        $users = User::paginate(10);
         return view("admin.dashboard", compact("title", "users"));
     }
 }
